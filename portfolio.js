@@ -1,3 +1,5 @@
+import { projectsArr } from "./data.js";
+
 //////////////////////////////////////////////////////////////////////
 // add span tags to characters in h1
 const h1El = document.querySelector('h1');
@@ -15,7 +17,22 @@ h1El.innerHTML = h1SpanArr.join("");
 
 
 //////////////////////////////////////////////////////////////////////
-// navbar button 
+// update active navbar link when in associated section
+const navbarClassArr = ['.menu_home', '.menu_portfolio', '.menu_about', '.menu_contact'];
+const navbarLinksArr = [];
+
+const handleMenuChoice = (e) => {
+    navbarLinksArr.forEach((link) => {
+    if(link.classList.contains('current')) link.classList.remove('current');
+    })
+    e.classList.add('current')
+}
+
+navbarClassArr.forEach((link,index) => {
+    navbarLinksArr.push(document.querySelector(navbarClassArr[index]));
+    navbarLinksArr[index].addEventListener("click", e => {handleMenuChoice(e.currentTarget)});
+}); 
+
 
 
 

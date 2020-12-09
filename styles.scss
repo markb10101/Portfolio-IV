@@ -11,7 +11,8 @@
 }
 
 body {
-    margin: 0 auto;
+    overflow: hidden;
+    margin: 0 auto 4rem auto;
     max-width: 1800px;
     background-color: rgba(86, 151, 215, 0.95);
     height: 3745px;
@@ -20,7 +21,7 @@ body {
     background-repeat: no-repeat;
 
     .navBar {
-        background-color: rgba(86, 151, 215, 0.95);
+        background-color: rgba(86, 151, 215, 0.75);
         z-index: 99;
         overflow: hidden;
         position: fixed;
@@ -38,8 +39,6 @@ body {
                 gap: 5%;
                 list-style-type: none;
 
-
-
                 a {
                     position: relative;
                     text-align: center;
@@ -55,25 +54,20 @@ body {
                         bottom: 0.175rem;
                         text-shadow: 0 0.4rem 0.125rem rgba(0, 0, 0, 0.2);
                     }
-
+ 
                     li {
                         width: 6rem;
                         float: left;
                     }
-
-                    .current {
-                        color: #fff;
-                    }
-
-
-
+                }
+                a.current {
+                    color: #fff;
                 }
             }
         }
     }
 
     .pageContainer {
-
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -94,12 +88,13 @@ body {
                     line-height: 3.5rem;
                     font-size: 3rem;
                     color: #fff;
-                    text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
+
 
                     .h1Char {
 
                         position: relative;
                         bottom: 0;
+                        text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
                         transition: bottom 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), text-shadow 0.3s;
 
                         &:hover {
@@ -141,17 +136,17 @@ body {
                     }
                 }
 
-                section {
-                    p {
-                        padding: 0.5rem 0;
+                // section {
+                //     p {
+                //         padding: 0.5rem 0;
 
-                        a {
-                            text-decoration: none;
-                            color: #fff;
+                //         a {
+                //             text-decoration: none;
+                //             color: #fff;
 
-                        }
-                    }
-                }
+                //         }
+                //     }
+                // }
             }
 
             h2 {
@@ -160,13 +155,39 @@ body {
             }
 
             section {
-               
+                p {
+                    padding: 0.5rem 0;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+
+                    }
+                }
             }
+
+
 
         }
 
         .mainContainer#contact {
             color: #fff;
+
+
+            footer {
+                width: 100%;
+                text-align: center;
+                //background-color: rgba(0, 0, 0, 0.25);
+                height: 1.5rem;
+                color: rgba(255, 255, 255, 0.25);
+
+                margin-top: 610px;
+                bottom: 0px;
+
+            }
+
         }
+
+
     }
 }

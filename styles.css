@@ -8,7 +8,8 @@
 }
 
 body {
-  margin: 0 auto;
+  overflow: hidden;
+  margin: 0 auto 4rem auto;
   max-width: 1800px;
   background-color: rgba(86, 151, 215, 0.95);
   height: 3745px;
@@ -17,7 +18,7 @@ body {
   background-repeat: no-repeat;
 }
 body .navBar {
-  background-color: rgba(86, 151, 215, 0.95);
+  background-color: rgba(86, 151, 215, 0.75);
   z-index: 99;
   overflow: hidden;
   position: fixed;
@@ -54,7 +55,7 @@ body .navBar .menu ul a li {
   width: 6rem;
   float: left;
 }
-body .navBar .menu ul a .current {
+body .navBar .menu ul a.current {
   color: #fff;
 }
 body .pageContainer {
@@ -77,11 +78,11 @@ body .pageContainer .mainContainer header h1 {
   line-height: 3.5rem;
   font-size: 3rem;
   color: #fff;
-  text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
 }
 body .pageContainer .mainContainer header h1 .h1Char {
   position: relative;
   bottom: 0;
+  text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
   transition: bottom 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), text-shadow 0.3s;
 }
 body .pageContainer .mainContainer header h1 .h1Char:hover {
@@ -113,17 +114,25 @@ body .pageContainer .mainContainer header button:hover {
   background-color: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
-body .pageContainer .mainContainer header section p {
-  padding: 0.5rem 0;
-}
-body .pageContainer .mainContainer header section p a {
-  text-decoration: none;
-  color: #fff;
-}
 body .pageContainer .mainContainer h2 {
   font-weight: bold;
   font-size: 2rem;
 }
+body .pageContainer .mainContainer section p {
+  padding: 0.5rem 0;
+}
+body .pageContainer .mainContainer section p a {
+  text-decoration: none;
+  color: #fff;
+}
 body .pageContainer .mainContainer#contact {
   color: #fff;
+}
+body .pageContainer .mainContainer#contact footer {
+  width: 100%;
+  text-align: center;
+  height: 1.5rem;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 610px;
+  bottom: 0px;
 }
