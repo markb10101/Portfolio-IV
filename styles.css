@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1800px;
+  background-color: rgba(86, 151, 215, 0.95);
+  height: 3745px;
+  background-image: url("./images/winter_web.jpg");
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+body .navBar {
+  background-color: rgba(86, 151, 215, 0.95);
+  z-index: 99;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.125);
+}
+body .navBar .menu {
+  margin: 0.5rem;
+}
+body .navBar .menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  list-style-type: none;
+}
+body .navBar .menu ul a {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  bottom: 0;
+  text-shadow: 0 0 rgba 0, 0, 0, 0.2;
+  transition: bottom 0.2s ease-out, text-shadow 0.2s;
+}
+body .navBar .menu ul a:hover {
+  color: #fff;
+  bottom: 0.175rem;
+  text-shadow: 0 0.4rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+body .navBar .menu ul a li {
+  width: 6rem;
+  float: left;
+}
+body .navBar .menu ul a .current {
+  color: #fff;
+}
+body .pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body .pageContainer .mainContainer {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.125);
+  padding: 4rem 2rem;
+  height: 935px;
+}
+body .pageContainer .mainContainer header {
+  padding-top: 8rem;
+  text-align: center;
+}
+body .pageContainer .mainContainer header h1 {
+  position: relative;
+  line-height: 3.5rem;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
+}
+body .pageContainer .mainContainer header h1 .h1Char {
+  position: relative;
+  bottom: 0;
+  transition: bottom 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), text-shadow 0.3s;
+}
+body .pageContainer .mainContainer header h1 .h1Char:hover {
+  bottom: 0.5rem;
+  text-shadow: 0 1rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+body .pageContainer .mainContainer header p.subheading {
+  padding: 0.25rem 0 1rem 0;
+  font-size: 1.375rem;
+}
+body .pageContainer .mainContainer header p {
+  font-weight: bold;
+}
+body .pageContainer .mainContainer header button {
+  margin: 1rem auto;
+  display: block;
+  width: 8rem;
+  position: relative;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s;
+}
+body .pageContainer .mainContainer header button:hover {
+  width: 12rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+body .pageContainer .mainContainer header section p {
+  padding: 0.5rem 0;
+}
+body .pageContainer .mainContainer header section p a {
+  text-decoration: none;
+  color: #fff;
+}
+body .pageContainer .mainContainer h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+body .pageContainer .mainContainer#contact {
+  color: #fff;
+}
