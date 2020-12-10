@@ -2,31 +2,53 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
+
+//////////////////////////////////////////////////////////// 
+// procedural
+.pageTop {
+    display: block;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+}
+.circle {
+    //border: 4px solid rgba(255,255,255,0.125);
+    //background-color: rgba(255,255,255,0.125);
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+}
+
+//////////////////////////////////////////////////////////// 
+// page
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
-
-body {
+body  {
+   
     overflow: hidden;
     margin: 0 auto 4rem auto;
     max-width: 1800px;
     background-color: rgba(86, 151, 215, 0.95);
-    height: 3745px;
     background-image: url("./images/winter_web.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
+    background-size: auto;
 
     .navBar {
+        max-width: 1800px;
         background-color: rgba(86, 151, 215, 0.75);
         z-index: 99;
         overflow: hidden;
         position: fixed;
         top: 0;
         width: 100%;
+        margin: 0 auto;
         border-bottom: 1px solid rgba(0, 0, 0, 0.25);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.125);
 
@@ -34,9 +56,10 @@ body {
             margin: 0.5rem;
 
             ul {
+
                 display: flex;
                 justify-content: center;
-                gap: 5%;
+                gap: 4rem;
                 list-style-type: none;
 
                 a {
@@ -56,8 +79,8 @@ body {
                     }
  
                     li {
-                        width: 6rem;
-                        float: left;
+                        width: 5%;
+                        //float: left;
                     }
                 }
                 a.current {
@@ -68,19 +91,18 @@ body {
     }
 
     .pageContainer {
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
 
         .mainContainer {
-
-            border-bottom: 2px solid rgba(255, 255, 255, 0.75);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.125);
-            padding: 4rem 2rem;
+            margin: 0 auto;
+            padding: 9rem 2rem;
             height: 935px;
 
             header {
-                padding-top: 8rem;
+                padding-top: 6rem;
                 text-align: center;
 
                 h1 {
@@ -155,7 +177,9 @@ body {
             }
 
             section {
+
                 p {
+                    
                     padding: 0.5rem 0;
 
                     a {
