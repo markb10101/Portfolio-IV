@@ -16,6 +16,8 @@
     position: relative;
     width: 2.25rem;
     height: 2.25rem;
+    //background-image: url("./images/snowflake.png");
+    //background-size: 2rem;
     border-radius: 50%;
     z-index: 1;
 }
@@ -117,15 +119,18 @@ body {
     }
 
     .anim_options {
-        border: 1px solid black;
+        user-select: none;
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.25);
         padding: 0.25rem 0.5rem;
         position: absolute;
-        top: 3rem;
+        top: 60px; // add offset for sections
+        left: 2rem;
         width: 18rem;
 
         h3 {
-            margin-left: 0.25rem;
-            margin-bottom: 0.5rem;
+            margin-left: 0.75rem;
+            margin-bottom: 0.25rem;
             font-size: 1rem;
             font-weight: normal;
         }
@@ -134,16 +139,36 @@ body {
             display: flex;
             justify-content: space-between;
 
-            p {
-                margin-left: 0.25rem;
-                font-size: 0.75rem;
+            .close {
+                position: absolute;
+                top: 0.5rem;
+                right: 0.5rem;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
+                width: 1.5rem;
+                height: 1.5rem;
+                line-height: 1.5rem;
+                color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(255, 255, 255, 0.125);
+                border-radius: 50%;
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgba(0, 0, 0, 0.75);
+                    background-color: rgba(255, 255, 255, 0.250);
+                }
             }
 
             .col {
                 width: 50%;
-                font-size: 0.5rem;
                 padding: 0 0.5rem;
-                
+
+                p {
+                    margin: 0 0.25rem;
+                    font-size: 0.75rem;
+                }
+
                 .slider {
                     -webkit-appearance: none;
                     margin: 0.25rem 0.25rem;
@@ -189,6 +214,28 @@ body {
                     background: rgba(0, 0, 0, 0.25);
                 }
 
+                ////// firefox
+                .slider::-moz-range-thumb {
+                    -webkit-appearance: none;
+                    height: 0.75rem;
+                    width: 0.5rem;
+                    border-radius: 3px;
+                    background: #fff;
+                    cursor: pointer;
+                    margin-top: -0.15rem;
+                }
+
+                .slider::-moz-range-track {
+                    width: 100%;
+                    height: 0.5rem;
+                    cursor: pointer;
+                    background: rgba(0, 0, 0, 0.125);
+                }
+
+                .slider:focus::-moz-range-track {
+                    background: rgba(0, 0, 0, 0.25);
+                }
+
             }
         }
     }
@@ -202,16 +249,19 @@ body {
 
         .mainContainer {
             margin: 0 auto;
-            padding: 9rem 2rem;
+            padding: 20rem 2rem;
             height: 935px;
 
             header {
-                padding-top: 6rem;
+                padding-top: 4rem;
                 text-align: center;
                 z-index: 5;
 
                 h1 {
+
+                    z-index: 5;
                     position: relative;
+
                     line-height: 3.5rem;
                     font-size: 3rem;
                     color: #fff;
@@ -220,6 +270,7 @@ body {
                     .h1Char {
 
                         position: relative;
+                        margin: 0;
                         bottom: 0;
                         text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
                         transition: bottom 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), text-shadow 0.3s;
@@ -232,7 +283,7 @@ body {
                 }
 
                 p.subheading {
-
+                    z-index: 5;
                     padding: 0.25rem 0 1rem 0;
                     font-size: 1.375rem;
 

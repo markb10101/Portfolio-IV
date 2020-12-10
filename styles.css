@@ -96,15 +96,18 @@ body .navBar .menu ul a.current {
   color: #fff;
 }
 body .anim_options {
-  border: 1px solid black;
+  user-select: none;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.25);
   padding: 0.25rem 0.5rem;
   position: absolute;
-  top: 3rem;
+  top: 60px;
+  left: 2rem;
   width: 18rem;
 }
 body .anim_options h3 {
-  margin-left: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-left: 0.75rem;
+  margin-bottom: 0.25rem;
   font-size: 1rem;
   font-weight: normal;
 }
@@ -112,14 +115,32 @@ body .anim_options .settings_container {
   display: flex;
   justify-content: space-between;
 }
-body .anim_options .settings_container p {
-  margin-left: 0.25rem;
-  font-size: 0.75rem;
+body .anim_options .settings_container .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 50%;
+}
+body .anim_options .settings_container .close:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 body .anim_options .settings_container .col {
   width: 50%;
-  font-size: 0.5rem;
   padding: 0 0.5rem;
+}
+body .anim_options .settings_container .col p {
+  margin: 0 0.25rem;
+  font-size: 0.75rem;
 }
 body .anim_options .settings_container .col .slider {
   -webkit-appearance: none;
@@ -159,6 +180,24 @@ body .anim_options .settings_container .col .slider::-webkit-slider-runnable-tra
 body .anim_options .settings_container .col .slider:focus::-webkit-slider-runnable-track {
   background: rgba(0, 0, 0, 0.25);
 }
+body .anim_options .settings_container .col .slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 0.75rem;
+  width: 0.5rem;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: -0.15rem;
+}
+body .anim_options .settings_container .col .slider::-moz-range-track {
+  width: 100%;
+  height: 0.5rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.125);
+}
+body .anim_options .settings_container .col .slider:focus::-moz-range-track {
+  background: rgba(0, 0, 0, 0.25);
+}
 body .pageContainer {
   margin: 0 auto;
   display: flex;
@@ -167,15 +206,16 @@ body .pageContainer {
 }
 body .pageContainer .mainContainer {
   margin: 0 auto;
-  padding: 9rem 2rem;
+  padding: 20rem 2rem;
   height: 935px;
 }
 body .pageContainer .mainContainer header {
-  padding-top: 6rem;
+  padding-top: 4rem;
   text-align: center;
   z-index: 5;
 }
 body .pageContainer .mainContainer header h1 {
+  z-index: 5;
   position: relative;
   line-height: 3.5rem;
   font-size: 3rem;
@@ -184,6 +224,7 @@ body .pageContainer .mainContainer header h1 {
 }
 body .pageContainer .mainContainer header h1 .h1Char {
   position: relative;
+  margin: 0;
   bottom: 0;
   text-shadow: 0 0.25rem 0.125rem rgba(1, 0, 0, 0.5);
   transition: bottom 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), text-shadow 0.3s;
@@ -193,6 +234,7 @@ body .pageContainer .mainContainer header h1 .h1Char:hover {
   text-shadow: 0 1rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 body .pageContainer .mainContainer header p.subheading {
+  z-index: 5;
   padding: 0.25rem 0 1rem 0;
   font-size: 1.375rem;
 }
