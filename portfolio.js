@@ -2,9 +2,22 @@
 
 
 const portfolio = {
-    timer: 0,
-    maxItemFrame: 50,
-    itemFrame: 50
+    maxItemFrame: 12,
+    itemFrame: 0,
+    animStep: 0,
+    animResolution: 0.0125
+
+}
+
+const balls = {
+    redVal: 255,
+    greenVal: 255,
+    blueVal: 255,
+    amplitude: 0.25,
+    frequency: 0.25,
+    offset: 0.5,
+    transparency: 0.025,
+    spread: 50
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -40,25 +53,10 @@ navbarClassArr.forEach((link, index) => {
     navbarLinksArr[index].addEventListener("click", e => { handleMenuChoice(e.currentTarget) });
 });
 
-
-const animate = () => {
-    const animObjects = document.querySelectorAll('.object');
-    const pageWidth = document.body.clientWidth;
-    animObjects.forEach((item, index) => {
-        item.style.left = `${(pageWidth/4) * Math.sin(portfolio.itemFrame + index/4) + (pageWidth/2)-20}px`;
-        item.style.top = `${40 * index}px`;
-        item.style.backgroundColor = `rgba(255,255,255,${0.5-(0.025*index)})`
-    })
-    portfolio.itemFrame -= 0.0125;
-    if (portfolio.itemFrame <= 0) portfolio.itemFrame = portfolio.maxItemFrame;
-}
-
 //////////////////////////////////////////////////////////////////////
-// div test
+// sine balls
 
-
-document.addEventListener('DOMContentLoaded', () => {
-
+const setupAnimatingElements = () => {
     portfolio.pageTop = document.querySelector('.pageTop');
     let objectsArr = [];
     for (i = 0; i < 20; i++) {
@@ -73,22 +71,77 @@ document.addEventListener('DOMContentLoaded', () => {
         objectsArr.push(newObject);
         portfolio.pageTop.append(objectsArr[i]);
     }
+}
 
 
+const setupAnimationOptions = () => {
+    
+    
 
-//     let newObject[i] = document.createElement('div');
-//         newObject.style.display = "block";
-//         newObject.style.zIndex = "999";
-//         newObject.pageTop.append(testObject);
-//         newObject.style.position = "absolute";
-//         newObject.style.top = "0px";
-//         newObject.style.left = "100px";
-//         testObject.push()
-//         document.createElement('div');
-// //testObject.innerHTML = "TESTING";
-//     
+    portfolio.animWindow = document.querySelector('.anim_options');
+    console.log(portfolio.animWindow);
+
+    const iconSettings = document.querySelector('.icon_settings');
+    iconSettings.onclick = () => {
+        portfolio.animWindow.style.display === "none" ? portfolio.animWindow.style.display = "block" : portfolio.animWindow.style.display = "none";
+
+    };
+
+    const sliderAmplitude = document.querySelector('.slider.amplitude');
+    sliderAmplitude.oninput = () => {
+        balls.amplitude = sliderAmplitude.value / 100;
+    }
+    const sliderFrequency = document.querySelector('.slider.frequency');
+    sliderFrequency.oninput = () => {
+        balls.frequency = sliderFrequency.value / 100;
+    }
+    const sliderOffset = document.querySelector('.slider.offset');
+    sliderOffset.oninput = () => {
+        balls.offset = sliderOffset.value / 100;
+    }
+    const sliderSpread = document.querySelector('.slider.spread');
+    sliderSpread.oninput = () => {
+        balls.spread = sliderSpread.value;
+    }
+    const sliderColRed = document.querySelector('.slider.red');
+    sliderColRed.oninput = () => {
+        balls.redVal = sliderColRed.value;
+    }
+    const sliderColGreen = document.querySelector('.slider.green');
+    sliderColGreen.oninput = () => {
+        balls.greenVal = sliderColGreen.value;
+    }
+    const sliderColBlue = document.querySelector('.slider.blue');
+    sliderColBlue.oninput = () => {
+        balls.blueVal = sliderColBlue.value;
+    }
+    
+    const sliderColOpacity = document.querySelector('.slider.opacity');
+    sliderColOpacity.oninput = () => {
+        balls.transparency = (500 - sliderColOpacity.value) /1000;
+    }
+
+}
+
+const animate = () => {
+    const animObjects = document.querySelectorAll('.object');
+    const pageWidth = document.body.clientWidth;
+    animObjects.forEach((item, index) => {
+        const position = (pageWidth * balls.amplitude) * Math.sin(portfolio.animStep + index * balls.frequency) + (pageWidth * balls.offset) - 20
+        item.style.left = `${position}px`;
+        item.style.top = `${balls.spread * index}px`;
+        item.style.backgroundColor = `rgba(${balls.redVal},${balls.greenVal},${balls.blueVal},${0.5 - (balls.transparency)})`
+    })
+    portfolio.animStep += portfolio.animResolution;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
 
     
+    setupAnimatingElements();
+    
+
+    setupAnimationOptions();
 
 
     setInterval(animate, 5);
