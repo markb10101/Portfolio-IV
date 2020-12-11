@@ -25,6 +25,7 @@
 }
 
 body {
+  overflow-x: hidden;
   max-width: 1800px;
   background-color: rgba(86, 151, 215, 0.95);
   background-image: url("./images/winter_web.jpg");
@@ -135,6 +136,9 @@ body .anim_options .settings_container .close:hover {
 body .anim_options .settings_container .col {
   width: 50%;
   padding: 0 0.5rem;
+}
+body .anim_options .settings_container .col input.colorSelector {
+  width: 100%;
 }
 body .anim_options .settings_container .col p {
   margin: 0 0.25rem;
