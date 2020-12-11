@@ -35,6 +35,6 @@ export const projectsArr = [
         alt: "Tug Of Moai Screenshot",
         liveSrc: "https://github.com/markb10101/Tug-of-War-Challenge",
         codeSrc: "https://github.com/markb10101/Tug-of-War-Challenge"
-    }
+    },
 
 ];

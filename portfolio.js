@@ -1,11 +1,11 @@
-//import { projectsArr } from "./data.js";
+import { projectsArr } from "./data.js";
 
 
 const portfolio = {
     maxItemFrame: 12,
     itemFrame: 0,
     animStep: 0,
-    animResolution: 0.0125
+    animResolution: 0.02
 
 }
 
@@ -42,17 +42,19 @@ h1El.innerHTML = h1SpanArr.join("");
 // update active navbar link when in associated section
 const navbarClassArr = ['.menu_home', '.menu_portfolio', '.menu_about', '.menu_contact'];
 const navbarLinksArr = [];
+//const navbarEl = document.querySelector('.navbar');
+
 
 const handleMenuChoice = (e) => {
     navbarLinksArr.forEach((link,index) => {
         if (link.classList.contains('current')) link.classList.remove('current');
         if(link===e){
-            
             //move animation window 
-            portfolio.animWindow.style.top = `${60 + (935 * index)}px`;
-
-            console.log(index);
-            console.log(portfolio.animWindow.style.top);
+            //portfolio.animWindow.style.top = `${60 + (935 * index)}px`;
+            // attach to navbar
+           //portfolio.pageTop.appendChild(portfolio.animWindow);
+           portfolio.animWindow.style.position = "fixed";
+           // portfolio.animWindow.style.top = 20px; //`${60 + (935 * index)}px`;
         }
     })
     e.classList.add('current')
@@ -69,7 +71,7 @@ navbarClassArr.forEach((link, index) => {
 const setupAnimatingElements = () => {
     portfolio.pageTop = document.querySelector('.pageTop');
     let objectsArr = [];
-    for (i = 0; i < 80; i++) {
+    for (let i = 0; i < 80; i++) {
         let newObject = document.createElement('div');
         newObject.style.display = "block";
         newObject.style.zIndex = "999";
@@ -96,7 +98,6 @@ const setupAnimationOptions = () => {
     const iconSettings = document.querySelector('.icon_settings');
     iconSettings.onclick = () => {
         portfolio.animWindow.style.display === "none" ? portfolio.animWindow.style.display = "block" : portfolio.animWindow.style.display = "none";
-
     };
 
     const sliderAmplitude = document.querySelector('.slider.amplitude');
@@ -160,11 +161,18 @@ const animate = () => {
         item.style.zIndex = "1";
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY*2810) + (balls.spread * index)}px`;
-        item.style.backgroundColor = `rgba(${balls.redVal},${balls.greenVal},${balls.blueVal},${1.0 - ((balls.transparency) + (sinVal * balls.fade))})`
-
+        //item.style.backgroundColor = `rgba(${balls.redVal},${balls.greenVal},${balls.blueVal},${1.0 - ((balls.transparency) + (sinVal * balls.fade))})`
+        item.style.backgroundImage = `radial-gradient(
+            rgba(${balls.redVal},${balls.greenVal},${balls.blueVal},
+                ${1.0 - ((balls.transparency) + (sinVal * balls.fade))}) 5%,
+            rgba(${balls.redVal},${balls.greenVal},${balls.blueVal},0) 80%`;
     })
     portfolio.animStep += portfolio.animResolution;
 }
+
+//////////////////////////////////////////////////////////
+// project cards
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
