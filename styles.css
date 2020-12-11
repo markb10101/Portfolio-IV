@@ -25,7 +25,6 @@
 
 body {
   overflow: hidden;
-  margin: 0 auto 4rem auto;
   max-width: 1800px;
   background-color: rgba(86, 151, 215, 0.95);
   background-image: url("./images/winter_web.jpg");
@@ -71,7 +70,7 @@ body .navBar .menu {
 body .navBar .menu ul {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 8vw;
   list-style-type: none;
 }
 body .navBar .menu ul a {
@@ -117,8 +116,8 @@ body .anim_options .settings_container {
 }
 body .anim_options .settings_container .close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.45rem;
+  right: 0.45rem;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
@@ -157,6 +156,7 @@ body .anim_options .settings_container .col .slider:focus {
 }
 body .anim_options .settings_container .col .slider::-ms-track {
   width: 80%;
+  margin: 0.25rem 0.25rem;
   cursor: pointer;
   background: transparent;
   border-color: transparent;
@@ -180,23 +180,27 @@ body .anim_options .settings_container .col .slider::-webkit-slider-runnable-tra
 body .anim_options .settings_container .col .slider:focus::-webkit-slider-runnable-track {
   background: rgba(0, 0, 0, 0.25);
 }
-body .anim_options .settings_container .col .slider::-moz-range-thumb {
-  -webkit-appearance: none;
-  height: 0.75rem;
-  width: 0.5rem;
-  border-radius: 3px;
-  background: #fff;
-  cursor: pointer;
-  margin-top: -0.15rem;
-}
-body .anim_options .settings_container .col .slider::-moz-range-track {
-  width: 100%;
-  height: 0.5rem;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.125);
-}
-body .anim_options .settings_container .col .slider:focus::-moz-range-track {
-  background: rgba(0, 0, 0, 0.25);
+@-moz-document url-prefix() {
+  body .anim_options .settings_container .col .slider {
+    margin: 0rem 0.25rem;
+  }
+  body .anim_options .settings_container .col .slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 0.75rem;
+    width: 0.5rem;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+  }
+  body .anim_options .settings_container .col .slider::-moz-range-track {
+    width: 100%;
+    height: 0.5rem;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.125);
+  }
+  body .anim_options .settings_container .col .slider:focus::-moz-range-track {
+    background: rgba(0, 0, 0, 0.25);
+  }
 }
 body .pageContainer {
   margin: 0 auto;
@@ -206,7 +210,7 @@ body .pageContainer {
 }
 body .pageContainer .mainContainer {
   margin: 0 auto;
-  padding: 20rem 2rem;
+  padding: 18rem 2rem;
   height: 935px;
 }
 body .pageContainer .mainContainer header {
@@ -263,6 +267,10 @@ body .pageContainer .mainContainer h2 {
   font-weight: bold;
   font-size: 2rem;
 }
+body .pageContainer .mainContainer section {
+  margin: 0;
+  width: max(48rem);
+}
 body .pageContainer .mainContainer section p {
   padding: 0.5rem 0;
 }
@@ -270,6 +278,7 @@ body .pageContainer .mainContainer section p a {
   text-decoration: none;
   color: #fff;
 }
+body .pageContainer .mainContainer#about,
 body .pageContainer .mainContainer#contact {
   color: #fff;
 }

@@ -76,7 +76,6 @@ const setupAnimatingElements = () => {
         newObject.style.position = "absolute";
         newObject.style.top = "100px";
         newObject.style.left = "200px";
-        //newObject.innerHTML = `${i}`;
         newObject.classList.add('circle', 'object');
         objectsArr.push(newObject);
         portfolio.pageTop.append(objectsArr[i]);
@@ -89,6 +88,7 @@ const setupAnimationOptions = () => {
     portfolio.animWindow = document.querySelector('.anim_options');
 
     const closeButton = document.querySelector('.close');
+    closeButton.innerText = 'X';
     closeButton.onclick = () => {
         portfolio.animWindow.style.display = "none";
     };
