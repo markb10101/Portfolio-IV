@@ -10,7 +10,8 @@ const balls = {
     spread: 10,
     colorHex: '#FFFF32',
     opacity: 0.8,
-    fade: 0.5,
+    fade: 0,
+    size: 30,
     animStep: 0,
     animResolution: 0.025,
 
@@ -148,6 +149,11 @@ const setupAnimationOptions = () => {
     sliderSpeed.oninput = () => {
         balls.animResolution = sliderSpeed.value / 1000;
     }
+    const sliderSize = document.querySelector('.slider.size');
+    sliderSize.defaultValue = balls.size;
+    sliderSize.oninput = () => {
+        balls.size = sliderSize.value;
+    }
 }
 
 const animate = () => {
@@ -160,8 +166,11 @@ const animate = () => {
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY * 2810) + (balls.spread * index)}px`;
         item.style.backgroundImage = `radial-gradient(
-                                    ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))} ,
-                                    ${hexToRGB("#ffffff", 0)} )`;
+                                    ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},
+                                    ${hexToRGB("#ffffff", 0)})`;
+        // item.style.width = `calc(8rem * ${balls.size}%)`;
+        item.style.width = `${balls.size/100 * 6}rem`;
+        item.style.height = `${balls.size/100 * 6}rem`;
     })
     balls.animStep += balls.animResolution;
 }
@@ -169,14 +178,19 @@ const animate = () => {
 //////////////////////////////////////////////////////////
 // project cards
 const setupProjectCards = () => {
-    const numOfprojects = projectsArr.length;
-    const carouselEl = document.querySelector('.carousel');
-    let carouselHTML = "";
+    portfolio.cardContainerEl = document.querySelector('.cardContainer');
+    portfolio.numOfprojects = projectsArr.length;
+
+    let cardHTML = "";
     projectsArr.forEach((project) => {
-        carouselHTML += `<div class="carousel__cell"><h3>${project.title}</h3><img src="${project.imgSrc}" alt="${project.alt}"/><p>${project.description}</p><p><a href="${project.liveSrc}">Live</a></p><p><a href="${project.codeSrc}">Code</a></p></div><!--test-->`;
+        cardHTML += `<div class="card"><h3>${project.title}</h3><img src="${project.imgSrc}" alt="${project.alt}"/><p>${project.description}</p><p><a href="${project.liveSrc}">Live</a></p><p><a href="${project.codeSrc}">Code</a></p></div>`;
+
     });
-    carouselEl.innerHTML = carouselHTML;
+    portfolio.cardContainerEl.innerHTML = cardHTML;
 }
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -185,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAnimatingElements();
     setupAnimationOptions();
 
-
+ 
     setInterval(animate, 5);
 })
 

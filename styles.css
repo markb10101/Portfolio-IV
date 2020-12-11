@@ -13,6 +13,7 @@
   border-radius: 50%;
   z-index: 1;
   user-select: none;
+  text-align: center;
 }
 
 * {
@@ -138,6 +139,7 @@ body .anim_options .settings_container .col {
   padding: 0 0.5rem;
 }
 body .anim_options .settings_container .col input.colorSelector {
+  margin-top: 0.65rem;
   width: 100%;
 }
 body .anim_options .settings_container .col p {
@@ -212,7 +214,7 @@ body .pageContainer {
   justify-content: space-evenly;
 }
 body .pageContainer .mainContainer {
-  padding: 18rem 2rem;
+  padding: 16rem 2rem;
   height: 935px;
 }
 body .pageContainer .mainContainer header {
@@ -283,11 +285,35 @@ body .pageContainer .mainContainer section p a {
   color: #fff;
 }
 body .pageContainer .mainContainer section .portfolioContainer {
-  margin-top: 24px;
-  height: 400px;
+  margin: 2rem 0;
   background-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  padding: 5%;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
+  margin: 0 auto;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 200px;
+  margin: 1rem 0;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card h3 {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card img {
+  max-width: 100%;
+  height: auto;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card p {
+  display: none;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
+  cursor: pointer;
 }
 body .pageContainer .mainContainer#about,
 body .pageContainer .mainContainer#contact {

@@ -8,6 +8,14 @@ export const projectsArr = [
         codeSrc: "https://github.com/markb10101/Dada-Code"
     },
     {
+        title: "Morse Code",
+        description: "A Morse Code <-> English Translator App coded with a TDD approach. Tests were written first, using Jest",
+        alt: "Morse Code Screenshot",
+        imgSrc: "./images/screen-morse.jpg",
+        liveSrc: "https://github.com/markb10101/Morse-Code-TDD",
+        codeSrc: "https://github.com/markb10101/Morse-Code-TDD"
+    },
+    {
         title: "Beer4U",
         description: "Beer4U is a BrewDog beer selector web app developed in React. The app interacts with the open source PUNK API to return a list of beers based on user search and filtering. A user can login using Google authentication via Firebase - after which they are granted access to Special Deals. The project demonstrated use of APIs and Private Routing in React.",
         alt: "Beer4U Screenshot",
