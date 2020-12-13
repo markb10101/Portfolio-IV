@@ -5,7 +5,7 @@ const portfolio = {}
 const balls = {
     amplitude: 0.1,
     frequency: 2,
-    offsetX: 0.85,
+    offsetX: 0.35,
     offsetY: 0,
     spread: 10.5,
     colorHex: '#FFFFFF',
@@ -109,6 +109,7 @@ const setupAnimationOptions = () => {
     sliderOffsetX.defaultValue = balls.offsetX * 100;
     sliderOffsetX.oninput = () => {
         balls.offsetX = sliderOffsetX.value / 100;
+        console.log(balls.offsetX);
     }
     const sliderOffsetY = document.querySelector('.slider.offsetY');
     sliderOffsetY.defaultValue = balls.offsetY * 100;
@@ -151,11 +152,11 @@ const animate = () => {
     const pageWidth = document.body.clientWidth;
     animObjectsArr.forEach((item, index) => {
         const sinVal = Math.sin(balls.animStep + index * balls.frequency)
-        const position = (pageWidth * balls.amplitude) * sinVal + (pageWidth * balls.offsetX) - 20
+        const position = pageWidth/2 + ((pageWidth * balls.amplitude) * sinVal + (pageWidth * balls.offsetX) - 20)
         item.style.zIndex = "1";
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY * 2810) + (balls.spread * index)}px`;
-        item.style.backgroundImage = `radial-gradient(
+        item.style.backgroundImage = `radial-gradient(circle at 100%,
                                     ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},
                                     ${hexToRGB("#ffffff", 0)})`;
         // item.style.width = `calc(8rem * ${balls.size}%)`;
