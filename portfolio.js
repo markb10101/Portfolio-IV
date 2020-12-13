@@ -5,15 +5,15 @@ const portfolio = {}
 const balls = {
     amplitude: 0.1,
     frequency: 2,
-    offsetX: 0.8,
+    offsetX: 0.85,
     offsetY: 0,
-    spread: 10,
-    colorHex: '#FFFF32',
-    opacity: 0.8,
+    spread: 10.5,
+    colorHex: '#FFFFFF',
+    opacity: 0.5,
     fade: 0,
     size: 30,
     animStep: 0,
-    animResolution: 0.025,
+    animResolution: 0.0125,
 
 }
 
@@ -37,20 +37,10 @@ h1El.innerHTML = h1SpanArr.join("");
 // update active navbar link when in associated section
 const navbarClassArr = ['.menu_home', '.menu_portfolio', '.menu_about', '.menu_contact'];
 const navbarLinksArr = [];
-//const navbarEl = document.querySelector('.navbar');
-
 
 const handleMenuChoice = (e) => {
     navbarLinksArr.forEach((link, index) => {
         if (link.classList.contains('current')) link.classList.remove('current');
-        if (link === e) {
-            //move animation window 
-            //portfolio.animWindow.style.top = `${60 + (935 * index)}px`;
-            // attach to navbar
-            //portfolio.pageTop.appendChild(portfolio.animWindow);
-            portfolio.animWindow.style.position = "fixed";
-            // portfolio.animWindow.style.top = 20px; //`${60 + (935 * index)}px`;
-        }
     })
     e.classList.add('current')
 }
@@ -92,7 +82,7 @@ const setupAnimatingElements = () => {
 
 const setupAnimationOptions = () => {
 
-    portfolio.animWindow = document.querySelector('.anim_options');
+    portfolio.animWindow = document.querySelector('.animOptions');
 
     const closeButton = document.querySelector('.close');
     closeButton.innerText = 'X';
@@ -183,22 +173,17 @@ const setupProjectCards = () => {
 
     let cardHTML = "";
     projectsArr.forEach((project) => {
-        cardHTML += `<div class="card"><h3>${project.title}</h3><img src="${project.imgSrc}" alt="${project.alt}"/><p>${project.description}</p><p><a href="${project.liveSrc}">Live</a></p><p><a href="${project.codeSrc}">Code</a></p></div>`;
+        cardHTML += `<div class="card ${project.title}"><h3>${project.title}</h3><img src="${project.imgSrc}" alt="${project.alt}"/><p class="info">${project.description}</p><div class="projectLinks"><span><a href="${project.liveSrc}" alt="Run it">Live</a></span><span><a href="${project.codeSrc}" alt="View the code">Code</a></span></div></div>`;
 
     });
     portfolio.cardContainerEl.innerHTML = cardHTML;
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-
 
     setupProjectCards();
     setupAnimatingElements();
     setupAnimationOptions();
-
  
     setInterval(animate, 5);
 })

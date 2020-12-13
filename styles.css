@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 .pageTop {
   display: block;
@@ -5,8 +6,7 @@
   top: 4rem;
   left: 0;
 }
-
-.circle {
+.pageTop .circle {
   position: relative;
   width: 2rem;
   height: 2rem;
@@ -25,17 +25,21 @@
   scrollbar-width: none;
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 body {
   overflow-x: hidden;
   max-width: 1800px;
-  background-color: rgba(86, 151, 215, 0.95);
-  background-image: url("./images/winter_web.jpg");
+  background-color: #5697d7;
+  background-image: linear-gradient(0deg, #5697d7 1%, rgba(86, 151, 215, 0.5) 5%, rgba(86, 151, 215, 0) 99%), url("./images/winter_web.jpg");
   background-position-x: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 body .navBar {
-  background-color: rgba(86, 151, 215, 0.75);
+  background-color: #5697d7;
   z-index: 5;
   overflow: hidden;
   position: fixed;
@@ -94,7 +98,7 @@ body .navBar .menu ul a li {
 body .navBar .menu ul a.current {
   color: #fff;
 }
-body .anim_options {
+body .animOptions {
   user-select: none;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.25);
@@ -105,17 +109,17 @@ body .anim_options {
   left: 2rem;
   width: 18rem;
 }
-body .anim_options h3 {
+body .animOptions h3 {
   margin-left: 0.75rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
   font-weight: normal;
 }
-body .anim_options .settings_container {
+body .animOptions .settingsContainer {
   display: flex;
   justify-content: space-between;
 }
-body .anim_options .settings_container .close {
+body .animOptions .settingsContainer .close {
   position: absolute;
   top: 0.45rem;
   right: 0.45rem;
@@ -129,37 +133,37 @@ body .anim_options .settings_container .close {
   background-color: rgba(255, 255, 255, 0.125);
   border-radius: 50%;
 }
-body .anim_options .settings_container .close:hover {
+body .animOptions .settingsContainer .close:hover {
   cursor: pointer;
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.25);
 }
-body .anim_options .settings_container .col {
+body .animOptions .settingsContainer .col {
   width: 50%;
   padding: 0 0.5rem;
 }
-body .anim_options .settings_container .col input.colorSelector {
+body .animOptions .settingsContainer .col input.colorSelector {
   margin-top: 0.65rem;
   width: 100%;
 }
-body .anim_options .settings_container .col p {
+body .animOptions .settingsContainer .col p {
   margin: 0 0.25rem;
   font-size: 0.75rem;
 }
-body .anim_options .settings_container .col .slider {
+body .animOptions .settingsContainer .col .slider {
   -webkit-appearance: none;
   margin: 0.25rem 0.25rem;
   width: 80%;
   border: none;
   background: transparent;
 }
-body .anim_options .settings_container .col .slider:hover {
+body .animOptions .settingsContainer .col .slider:hover {
   opacity: 1;
 }
-body .anim_options .settings_container .col .slider:focus {
+body .animOptions .settingsContainer .col .slider:focus {
   outline: none;
 }
-body .anim_options .settings_container .col .slider::-ms-track {
+body .animOptions .settingsContainer .col .slider::-ms-track {
   width: 80%;
   margin: 0.25rem 0.25rem;
   cursor: pointer;
@@ -167,7 +171,7 @@ body .anim_options .settings_container .col .slider::-ms-track {
   border-color: transparent;
   color: transparent;
 }
-body .anim_options .settings_container .col .slider::-webkit-slider-thumb {
+body .animOptions .settingsContainer .col .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 0.75rem;
   width: 0.5rem;
@@ -176,20 +180,20 @@ body .anim_options .settings_container .col .slider::-webkit-slider-thumb {
   cursor: pointer;
   margin-top: -0.15rem;
 }
-body .anim_options .settings_container .col .slider::-webkit-slider-runnable-track {
+body .animOptions .settingsContainer .col .slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.5rem;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.125);
 }
-body .anim_options .settings_container .col .slider:focus::-webkit-slider-runnable-track {
+body .animOptions .settingsContainer .col .slider:focus::-webkit-slider-runnable-track {
   background: rgba(0, 0, 0, 0.25);
 }
 @-moz-document url-prefix() {
-  body .anim_options .settings_container .col .slider {
+  body .animOptions .settingsContainer .col .slider {
     margin: 0rem 0.25rem;
   }
-  body .anim_options .settings_container .col .slider::-moz-range-thumb {
+  body .animOptions .settingsContainer .col .slider::-moz-range-thumb {
     -webkit-appearance: none;
     height: 0.75rem;
     width: 0.5rem;
@@ -197,13 +201,13 @@ body .anim_options .settings_container .col .slider:focus::-webkit-slider-runnab
     background: #fff;
     cursor: pointer;
   }
-  body .anim_options .settings_container .col .slider::-moz-range-track {
+  body .animOptions .settingsContainer .col .slider::-moz-range-track {
     width: 100%;
     height: 0.5rem;
     cursor: pointer;
     background: rgba(0, 0, 0, 0.125);
   }
-  body .anim_options .settings_container .col .slider:focus::-moz-range-track {
+  body .animOptions .settingsContainer .col .slider:focus::-moz-range-track {
     background: rgba(0, 0, 0, 0.25);
   }
 }
@@ -214,13 +218,14 @@ body .pageContainer {
   justify-content: space-evenly;
 }
 body .pageContainer .mainContainer {
-  padding: 16rem 2rem;
+  padding: 18rem 2rem;
   height: 935px;
 }
 body .pageContainer .mainContainer header {
   padding-top: 4rem;
   text-align: center;
   z-index: 5;
+  user-select: none;
 }
 body .pageContainer .mainContainer header h1 {
   z-index: 5;
@@ -273,6 +278,7 @@ body .pageContainer .mainContainer section {
   max-width: 48rem;
 }
 body .pageContainer .mainContainer section h2 {
+  user-select: none;
   color: #fff;
   font-weight: bold;
   font-size: 2rem;
@@ -284,11 +290,6 @@ body .pageContainer .mainContainer section p a {
   text-decoration: none;
   color: #fff;
 }
-body .pageContainer .mainContainer section .portfolioContainer {
-  margin: 2rem 0;
-  background-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-}
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
   margin: 0 auto;
   display: grid;
@@ -296,23 +297,154 @@ body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
   grid-template-columns: auto auto auto;
 }
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 5px;
   width: 200px;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
+@media only screen and (max-width: 600px) {
+  body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card {
+    margin: 1rem 0;
+  }
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
+  animation: jiggle 2s infinite linear;
+  transform-origin: center;
+  transform: scale(1.125, 1.125);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+@keyframes jiggle {
+  25% {
+    transform: rotate(1deg) scale(1.125, 1.125);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.125, 1.125);
+  }
+  75% {
+    transform: rotate(-1deg) scale(1.125, 1.125);
+  }
+}
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card h3 {
-  padding: 0 0.5rem;
+  padding: 0 0 0.5rem 0.5rem;
   font-size: 1rem;
 }
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card img {
   max-width: 100%;
   height: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card p {
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card p.info {
   display: none;
 }
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
+  cursor: pointer;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 0.25rem;
+  text-align: center;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span a {
+  text-decoration: none;
+  color: #000f;
+}
+body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+body .pageContainer .mainContainer section .contactFormContainer {
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+body .pageContainer .mainContainer section .contactFormContainer form {
+  margin-top: 1rem;
+  padding: 2rem 2rem 1rem 2rem;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div {
+  position: relative;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div label {
+  opacity: 0.3;
+  position: absolute;
+  top: 1.3rem;
+  left: 0.5rem;
+  color: #000;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text],
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email],
+body .pageContainer .mainContainer section .contactFormContainer form div select,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  resize: vertical;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:focus, body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:valid,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:focus,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:valid,
+body .pageContainer .mainContainer section .contactFormContainer form div select:focus,
+body .pageContainer .mainContainer section .contactFormContainer form div select:valid,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:focus,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:valid {
+  border: 4px solid #0f0;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:focus + label, body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:valid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:focus + label,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:valid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div select:focus + label,
+body .pageContainer .mainContainer section .contactFormContainer form div select:valid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:focus + label,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:valid + label {
+  top: -0.5rem;
+  opacity: 0.75;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid,
+body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid {
+  border: 4px solid #f00;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid + label,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid + label {
+  top: -0.5rem;
+  opacity: 0.75;
+}
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid + label:before,
+body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid + label:before,
+body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid + label:before,
+body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid + label:before {
+  content: "☒";
+}
+body .pageContainer .mainContainer section .contactFormContainer form button {
+  margin: 1rem auto;
+  display: block;
+  width: 8rem;
+  position: relative;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s;
+}
+body .pageContainer .mainContainer section .contactFormContainer form button:hover {
+  width: 12rem;
+  background-color: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 body .pageContainer .mainContainer#about,
@@ -323,11 +455,24 @@ body .pageContainer .mainContainer#about h2,
 body .pageContainer .mainContainer#contact h2 {
   color: #000;
 }
+body .pageContainer .mainContainer#about a,
+body .pageContainer .mainContainer#contact a {
+  color: #000;
+}
 body .pageContainer .mainContainer#contact footer {
   width: 100%;
   text-align: center;
   height: 1.5rem;
   color: rgba(255, 255, 255, 0.25);
-  margin-top: 640px;
+  margin-top: 40px;
   bottom: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  body .pageContainer .mainContainer#about {
+    margin-top: 12rem;
+  }
+  body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
+    grid-template-columns: auto auto;
+  }
 }

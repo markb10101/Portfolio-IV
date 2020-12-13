@@ -3,8 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 
-// set to number of projects from data file - check if this can be done via scss 
-$numOfProjects: 5;
+
+
+
+
+
 
 //////////////////////////////////////////////////////////// 
 // procedural
@@ -13,16 +16,16 @@ $numOfProjects: 5;
     position: absolute;
     top: 4rem;
     left: 0;
-}
 
-.circle {
-    position: relative;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    z-index: 1;
-    user-select: none;
-    text-align: center;
+    .circle {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        z-index: 1;
+        user-select: none;
+        text-align: center;
+    }
 }
 
 //////////////////////////////////////////////////////////// 
@@ -36,20 +39,28 @@ $numOfProjects: 5;
     scrollbar-width: none;
 }
 
-
+body::-webkit-scrollbar {
+    width: 0px;
+}
 
 body {
 
     overflow-x: hidden;
     max-width: 1800px;
-    background-color: rgba(86, 151, 215, 0.95);
-    background-image: url("./images/winter_web.jpg");
+    background-color: rgba(86, 151, 215,1);
+    background-image: linear-gradient(0deg,
+                    rgba(86, 151, 215, 1) 1%,
+                    rgba(86, 151, 215, 0.5) 5%,
+                    rgba(86, 151, 215, 0)99%),
+                      url("./images/winter_web.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
+
+
 
     .navBar {
-        background-color: rgba(86, 151, 215, 0.75);
+        background-color: rgba(86, 151, 215, 1.0);
         z-index: 5;
         overflow: hidden;
         position: fixed;
@@ -84,7 +95,6 @@ body {
             margin: 0.5rem;
 
             ul {
-                // border: 1px solid black;
                 display: flex;
                 justify-content: center;
                 gap: 8vw;
@@ -119,7 +129,7 @@ body {
         }
     }
 
-    .anim_options {
+    .animOptions {
         user-select: none;
         border-radius: 0.5rem;
         background-color: rgba(255, 255, 255, 0.25);
@@ -137,7 +147,7 @@ body {
             font-weight: normal;
         }
 
-        .settings_container {
+        .settingsContainer {
             display: flex;
             justify-content: space-between;
 
@@ -262,7 +272,7 @@ body {
         justify-content: space-evenly;
 
         .mainContainer {
-            padding: 16rem 2rem;
+            padding: 18rem 2rem;
             height: 935px;
 
 
@@ -270,6 +280,7 @@ body {
                 padding-top: 4rem;
                 text-align: center;
                 z-index: 5;
+                user-select: none;
 
                 h1 {
 
@@ -332,23 +343,18 @@ body {
 
 
             section {
-                // float: left;
-                // position: relative;
-
-                // text-align: left;
                 margin: 0 auto;
                 min-width: 8rem;
                 max-width: 48rem;
 
                 h2 {
-
+                    user-select: none;
                     color: #fff;
                     font-weight: bold;
                     font-size: 2rem;
                 }
 
                 p {
-                    // text-align: left;
                     padding: 0.5rem 0;
 
                     a {
@@ -358,10 +364,6 @@ body {
                 }
 
                 .portfolioContainer {
-                    margin: 2rem 0;
-
-                    background-color: rgba(255, 255, 255, 0.25);
-                    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
                     .cardContainer {
                         margin: 0 auto;
@@ -370,28 +372,88 @@ body {
                         grid-template-columns: auto auto auto;
 
                         .card {
-                            background-color: rgba(255, 255, 255, 0.5);
+                            background-color: rgba(255, 255, 255, 0.125);
+                            border-radius: 5px;
                             width: 200px;
-                            margin: 1rem 0;
+                            margin: 1.5rem 0;
+                            padding: 0.5rem;
+                            padding-bottom: 1rem;
                             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
+                            @media only screen and (max-width: 600px) {
+                                margin: 1rem 0;
+                            }
+
+
+                            &:hover {
+                                animation: jiggle 2s infinite linear;
+                                transform-origin: center;
+                                transform: scale(1.125, 1.125);
+                                border: 1px solid rgba(255, 255, 255, 0.5);
+                                border-top-color: rgba(255, 255, 255, 0.95);
+                                border-bottom-color: rgba(0, 0, 0, 0.5);
+                                background-color: rgba(255, 255, 255, 0.3);
+                                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+                            }
+
+                            @keyframes jiggle {
+                                25% {
+                                    transform: rotate(1deg) scale(1.125, 1.125);
+                                }
+
+                                50% {
+                                    transform: rotate(0deg) scale(1.125, 1.125);
+                                }
+
+                                75% {
+                                    transform: rotate(-1deg) scale(1.125, 1.125)
+                                }
+                            }
+
+
                             h3 {
-                                padding: 0 0.5rem;
+                                padding: 00 0 0.5rem 0.5rem;
                                 font-size: 1rem;
                             }
 
                             img {
-                                
+
                                 max-width: 100%;
                                 height: auto;
+                                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
                             }
 
-                            p {
+                            p.info {
                                 display: none;
                             }
 
                             &:hover {
                                 cursor: pointer;
+                            }
+
+                            .projectLinks {
+                                margin-top: 0.75rem;
+                                display: flex;
+                                justify-content: space-between;
+
+                                span {
+                                    position: relative;
+                                    background-color: rgba(255, 255, 255, 0.5);
+                                    padding: 0 0.25rem;
+                                    text-align: center;
+
+                                    a {
+                                        text-decoration: none;
+                                        color: #000f;
+                                    }
+
+                                    &:hover {
+                                        // top: -0.125rem;
+                                        // left: -0.125rem;
+                                        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+                                    }
+
+                                }
                             }
                         }
 
@@ -399,7 +461,92 @@ body {
 
                 }
 
+                .contactFormContainer {
 
+                    border-radius: 0.5rem;
+                    background-color: rgba(255, 255, 255, 0.25);
+
+                    form {
+                        margin-top: 1rem;
+                        padding: 2rem 2rem 1rem 2rem;
+
+                        div {
+                            position: relative;
+
+                            label {
+                                opacity: 0.3;
+                                position: absolute;
+                                top: 1.3rem;
+                                left: 0.5rem;
+                                color: #000;
+                            }
+
+                            input[type=text],
+                            input[type=email],
+                            select,
+                            textarea {
+                                padding: 0.5rem;
+                                margin: 1rem 0;
+                                width: 100%;
+                                resize: vertical;
+
+                                &:focus,
+                                &:valid {
+                                    border: 4px solid #0f0;
+
+                                    +label {
+                                        top: -0.5rem;
+                                        opacity: 0.75;
+
+                                    }
+
+
+                                }
+
+
+
+
+                                &:not(:placeholder-shown):not(:focus):invalid {
+                                    border: 4px solid #f00;
+
+                                    +label {
+                                        top: -0.5rem;
+                                        opacity: 0.75;
+
+                                        &:before {
+                                            content: "\2612 ";
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+
+                        }
+
+                        button {
+                            margin: 1rem auto;
+                            display: block;
+                            width: 8rem;
+                            position: relative;
+                            color: #fff;
+                            margin-bottom: 1.5rem;
+                            padding: 0.25rem;
+                            border: 2px solid black;
+                            border-radius: 5px;
+                            background-color: rgba(0, 0, 0, 0);
+                            transition: width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s;
+
+                            &:hover {
+                                width: 12rem;
+                                background-color: rgba(0, 0, 0, 0.25);
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                }
 
 
             }
@@ -408,11 +555,18 @@ body {
 
         }
 
+
+
+
         .mainContainer#about,
         .mainContainer#contact {
             color: #fff;
 
             h2 {
+                color: #000;
+            }
+
+            a {
                 color: #000;
             }
         }
@@ -426,12 +580,39 @@ body {
                 height: 1.5rem;
                 color: rgba(255, 255, 255, 0.25);
 
-                margin-top: 640px;
+                margin-top: 40px;
                 bottom: 0px;
 
             }
 
         }
+
+
+    }
+}
+
+//////////////////////////////////////////////////////////// 
+// mobile adjustments
+
+@media only screen and (max-width: 600px) {
+
+    body {
+        .pageContainer {
+            .mainContainer#about {
+                margin-top: 12rem;
+            }
+
+            .mainContainer {
+                section {
+                    .portfolioContainer {
+                        .cardContainer {
+                            grid-template-columns: auto auto;
+                        }
+                    }
+                }
+            }
+        }
+
 
 
     }
