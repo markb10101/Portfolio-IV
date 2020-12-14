@@ -55,7 +55,7 @@ body {
 
     .navBar {
         background-color: rgba(86, 151, 215, 1.0);
-        z-index: 5;
+        z-index: 99;
         overflow: hidden;
         position: fixed;
         top: 0;
@@ -364,6 +364,10 @@ body {
 
                 .portfolioContainer {
 
+                    .infoPanel {
+                        height: 10rem;
+                    }
+
                     .cardContainer {
                         margin: 0 auto;
                         display: grid;
@@ -383,7 +387,7 @@ body {
                             &:hover {
                                 margin: 1.9rem 0;
                                 animation: jiggle 2s infinite linear;
-                                transform: scale(1.125, 1.125);
+                                transform: scale(1.1, 1.1);
                                 border: 1px solid rgba(255, 255, 255, 0.5);
                                 border-top-color: rgba(255, 255, 255, 0.95);
                                 border-bottom-color: rgba(0, 0, 0, 0.5);
@@ -393,15 +397,15 @@ body {
 
                             @keyframes jiggle {
                                 25% {
-                                    transform: rotate(1deg) scale(1.125, 1.125);
+                                    transform: rotate(1deg) scale(1.1, 1.1);
                                 }
 
                                 50% {
-                                    transform: rotate(0deg) scale(1.125, 1.125);
+                                    transform: rotate(0deg) scale(1.1, 1.1);
                                 }
 
                                 75% {
-                                    transform: rotate(-1deg) scale(1.125, 1.125)
+                                    transform: rotate(-1deg) scale(1.1, 1.1)
                                 }
                             }
 
@@ -564,6 +568,10 @@ body {
             a {
                 color: #000;
             }
+        }
+
+        .mainContainer#about {
+            margin-top: 8rem;
         }
 
         .mainContainer#contact {

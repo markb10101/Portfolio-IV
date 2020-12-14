@@ -57,7 +57,7 @@ const hexToRGB = (hexVal, alpha = 1.0) => {
     const blueVal = parseInt(hexVal.slice(5, 7), 16);
 
     return `rgba(${redVal},${greenVal},${blueVal},${alpha})`;
-  
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -124,7 +124,7 @@ const setupAnimationOptions = () => {
 
     portfolio.colorSelectorEl = document.querySelector('.colorSelector');
     portfolio.colorSelectorEl.value = balls.colorHex;
-   
+
     const sliderColOpacity = document.querySelector('.slider.opacity');
     sliderColOpacity.defaultValue = balls.opacity * 1000;
     sliderColOpacity.oninput = () => {
@@ -152,7 +152,7 @@ const animate = () => {
     const pageWidth = document.body.clientWidth;
     animObjectsArr.forEach((item, index) => {
         const sinVal = Math.sin(balls.animStep + index * balls.frequency)
-        const position = pageWidth/2 + ((pageWidth * balls.amplitude) * sinVal + (pageWidth * balls.offsetX) - 20)
+        const position = pageWidth / 2 + ((pageWidth * balls.amplitude) * sinVal + (pageWidth * balls.offsetX) - 20)
         item.style.zIndex = "1";
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY * 2810) + (balls.spread * index)}px`;
@@ -160,17 +160,25 @@ const animate = () => {
                                     ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},
                                     ${hexToRGB("#ffffff", 0)})`;
         // item.style.width = `calc(8rem * ${balls.size}%)`;
-        item.style.width = `${balls.size/100 * 6}rem`;
-        item.style.height = `${balls.size/100 * 6}rem`;
+        item.style.width = `${balls.size / 100 * 6}rem`;
+        item.style.height = `${balls.size / 100 * 6}rem`;
     })
     balls.animStep += balls.animResolution;
 }
 
 //////////////////////////////////////////////////////////
 // project cards
+
+// const showProjectInfo = (e) => {
+//     e.preventDefault();
+//     const cardClicked = e.target;
+//     console.log(cardClicked);
+// }
+
 const setupProjectCards = () => {
     portfolio.cardContainerEl = document.querySelector('.cardContainer');
     portfolio.numOfprojects = projectsArr.length;
+    portfolio.infoPanelEl = document.querySelector('.infoPanel');
 
     let cardHTML = "";
     projectsArr.forEach((project) => {
@@ -178,6 +186,25 @@ const setupProjectCards = () => {
 
     });
     portfolio.cardContainerEl.innerHTML = cardHTML;
+
+    const cardElArr = document.querySelectorAll('.card');
+    cardElArr.forEach((card,index) => {
+        
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const cardClicked = e.currentTarget;
+            //portfolio.infoPanelEl.innerText = projectsArr[index].description;
+            portfolio.infoPanelEl.innerHTML = `<p>${projectsArr[index].description}</p>`;
+            
+            cardElArr.forEach((c,i)=>{
+              // i==index ? c.style.filter = "blur(0)" : c.style.filter = "blur(4px)";
+               // i==index ? c.style.opacity = "1" : c.style.opacity = "0.2";
+               c.style.backgroundColor = "rgba(255, 255, 255, 0.125)";
+               i==index ? c.style.backgroundColor = "rgba(255,255,255,0.5)" : null;
+            });
+        });
+        
+    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -185,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupProjectCards();
     setupAnimatingElements();
     setupAnimationOptions();
- 
+
     setInterval(animate, 5);
 })
 

@@ -40,7 +40,7 @@ body {
 }
 body .navBar {
   background-color: #5697d7;
-  z-index: 5;
+  z-index: 99;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -294,6 +294,9 @@ body .pageContainer .mainContainer section p a {
   text-decoration: none;
   color: #fff;
 }
+body .pageContainer .mainContainer section .portfolioContainer .infoPanel {
+  height: 10rem;
+}
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
   margin: 0 auto;
   display: grid;
@@ -313,7 +316,7 @@ body .pageContainer .mainContainer section .portfolioContainer .cardContainer .c
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
   margin: 1.9rem 0;
   animation: jiggle 2s infinite linear;
-  transform: scale(1.125, 1.125);
+  transform: scale(1.1, 1.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-top-color: rgba(255, 255, 255, 0.95);
   border-bottom-color: rgba(0, 0, 0, 0.5);
@@ -322,13 +325,13 @@ body .pageContainer .mainContainer section .portfolioContainer .cardContainer .c
 }
 @keyframes jiggle {
   25% {
-    transform: rotate(1deg) scale(1.125, 1.125);
+    transform: rotate(1deg) scale(1.1, 1.1);
   }
   50% {
-    transform: rotate(0deg) scale(1.125, 1.125);
+    transform: rotate(0deg) scale(1.1, 1.1);
   }
   75% {
-    transform: rotate(-1deg) scale(1.125, 1.125);
+    transform: rotate(-1deg) scale(1.1, 1.1);
   }
 }
 body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card h3 {
@@ -458,6 +461,9 @@ body .pageContainer .mainContainer#contact h2 {
 body .pageContainer .mainContainer#about a,
 body .pageContainer .mainContainer#contact a {
   color: #000;
+}
+body .pageContainer .mainContainer#about {
+  margin-top: 8rem;
 }
 body .pageContainer .mainContainer#contact footer {
   width: 100%;
