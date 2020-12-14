@@ -48,4 +48,12 @@ export const projectsArr = [
         liveSrc: "https://tugofmoai.markbirchall.net",
         codeSrc: "https://github.com/markb10101/Tug-of-War-Challenge"
     },
+    {
+        title: "React Portfolio",
+        description: "An earlier version of this site, coded in functional React and making use of Hooks.",
+        alt: "React Portfolio Screenshot",
+        imgSrc: "./images/screen-react.jpg",
+        liveSrc: "https://react-portfolio-5bc53.web.app/",
+        codeSrc: "https://github.com/markb10101/React-Portfolio"
+    },
 ];

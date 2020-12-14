@@ -169,11 +169,6 @@ const animate = () => {
 //////////////////////////////////////////////////////////
 // project cards
 
-// const showProjectInfo = (e) => {
-//     e.preventDefault();
-//     const cardClicked = e.target;
-//     console.log(cardClicked);
-// }
 
 const setupProjectCards = () => {
     portfolio.cardContainerEl = document.querySelector('.cardContainer');
@@ -193,11 +188,10 @@ const setupProjectCards = () => {
         card.addEventListener('click', (e) => {
             e.stopPropagation();
             const cardClicked = e.currentTarget;
-            //portfolio.infoPanelEl.innerText = projectsArr[index].description;
             portfolio.infoPanelEl.innerHTML = `<p>${projectsArr[index].description}</p>`;
             
             cardElArr.forEach((c,i)=>{
-              // i==index ? c.style.filter = "blur(0)" : c.style.filter = "blur(4px)";
+               // i==index ? c.style.filter = "blur(0)" : c.style.filter = "blur(4px)";
                // i==index ? c.style.opacity = "1" : c.style.opacity = "0.2";
                c.style.backgroundColor = "rgba(255, 255, 255, 0.125)";
                i==index ? c.style.backgroundColor = "rgba(255,255,255,0.5)" : null;
@@ -207,8 +201,14 @@ const setupProjectCards = () => {
     })
 }
 
+const setupContactButton = () => {
+    const contactButtonEl = document.querySelector('.contactButton');
+    console.log(contactButtonEl);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
+    setupContactButton();
     setupProjectCards();
     setupAnimatingElements();
     setupAnimationOptions();

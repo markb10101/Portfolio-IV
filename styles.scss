@@ -272,7 +272,7 @@ body {
 
         .mainContainer {
             padding: 18rem 2rem;
-            height: 935px;
+            height: 96rem;
 
 
             header {
@@ -318,7 +318,9 @@ body {
                     font-weight: bold;
                 }
 
-                button {
+                .cvButton {
+                    user-select: none;
+                    text-decoration: none;
                     margin: 1rem auto;
                     display: block;
                     width: 8rem;
@@ -363,6 +365,8 @@ body {
                 }
 
                 .portfolioContainer {
+
+                    margin-bottom: 8rem;
 
                     .infoPanel {
                         height: 10rem;
