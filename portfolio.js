@@ -201,14 +201,9 @@ const setupProjectCards = () => {
     })
 }
 
-const setupContactButton = () => {
-    const contactButtonEl = document.querySelector('.contactButton');
-    console.log(contactButtonEl);
-}
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    setupContactButton();
     setupProjectCards();
     setupAnimatingElements();
     setupAnimationOptions();
