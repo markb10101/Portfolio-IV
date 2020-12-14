@@ -95,7 +95,6 @@ body {
                 list-style-type: none;
 
                 a {
-                    //border: 1px solid black;
                     user-select: none;
                     position: relative;
                     text-align: right;
@@ -113,7 +112,7 @@ body {
                     }
 
                     &:active {
-                        border: 1px solid black;
+                        //border: 1px solid black;
                     }
 
                     li {
@@ -147,6 +146,7 @@ body {
         }
 
         .settingsContainer {
+            
             display: flex;
             justify-content: space-between;
 

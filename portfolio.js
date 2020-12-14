@@ -14,7 +14,6 @@ const balls = {
     size: 30,
     animStep: 0,
     animResolution: 0.0125,
-
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -30,7 +29,6 @@ h1Arr.forEach((char) => {
 });
 
 h1El.innerHTML = h1SpanArr.join("");
-
 
 
 //////////////////////////////////////////////////////////////////////
@@ -156,10 +154,9 @@ const animate = () => {
         item.style.zIndex = "1";
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY * 2810) + (balls.spread * index)}px`;
-        item.style.backgroundImage = `radial-gradient(circle at 100%,
+        item.style.backgroundImage = `radial-gradient(circle,
                                     ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},
                                     ${hexToRGB("#ffffff", 0)})`;
-        // item.style.width = `calc(8rem * ${balls.size}%)`;
         item.style.width = `${balls.size / 100 * 6}rem`;
         item.style.height = `${balls.size / 100 * 6}rem`;
     })
@@ -168,7 +165,6 @@ const animate = () => {
 
 //////////////////////////////////////////////////////////
 // project cards
-
 
 const setupProjectCards = () => {
     portfolio.cardContainerEl = document.querySelector('.cardContainer');

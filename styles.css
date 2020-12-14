@@ -93,9 +93,6 @@ body .navBar .menu ul a:hover {
   bottom: 0.025rem;
   text-shadow: 0 0.4rem 0.125rem rgba(0, 0, 0, 0.2);
 }
-body .navBar .menu ul a:active {
-  border: 1px solid black;
-}
 body .navBar .menu ul a li {
   width: 100%;
 }
