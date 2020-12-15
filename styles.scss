@@ -1,7 +1,7 @@
 //* portfolio MB *// 
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-
+@import url('/normalize.css');
 
 //////////////////////////////////////////////////////////// 
 // procedural
@@ -369,6 +369,7 @@ body {
                     margin-bottom: 8rem;
 
                     .infoPanel {
+                        display: block;
                         height: 10rem;
                     }
 

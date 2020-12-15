@@ -1,7 +1,7 @@
 export const projectsArr = [
     {
         title: "Dada",
-        description: "Dada is a parenting app for fathers. It was developed by a team of 10 students, over a 5-week period, after which it was presented to the client as an MVP. We followed an Agile methodology. I took the opportunity to act as Project Manager, managing the team's workload, running stand-ups and retrospectives, updating tickets on Trello and communicating daily with the client. We worked to wireframes on Figma. The final MVP has a responsive layout, with breakpoints for mobile, tablet and desktop.",
+        description: "Dada is a parenting app for fathers. It was developed by a team of 10 students, over a 5-week period, after which it was presented to the client as an MVP. We followed an Agile methodology. I took the opportunity to act as Project Manager, managing the team's workload, running stand-ups and retrospectives, updating tickets on Trello and communicating daily with the client.",
         alt: "Dada Screenshot",
         imgSrc: "./images/screen-dada.jpg",
         liveSrc: "https://dada-da4d5.web.app/",
