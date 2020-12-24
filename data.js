@@ -8,6 +8,14 @@ export const projectsArr = [
         codeSrc: "https://github.com/markb10101/Dada-Code"
     },
     {
+        title: "Todo App",
+        description: "Coded in HTML5, SCSS and JS(ES6+) to a brief supplied by the Frontend Mentor site. The app has day/night colour schemes, a drag and drop interface and mobile/desktop breakpoints.",
+        alt: "Todo App Screenshot",
+        imgSrc: "./images/screen-todo.jpg",
+        liveSrc: "https://todo.markbirchall.net",
+        codeSrc: "https://github.com/markb10101/frontendmentor-mb-todo"
+    },
+    {
         title: "Morse Code",
         description: "A Morse Code <-> English Translator App coded with a TDD approach. Tests were written first, using Jest",
         alt: "Morse Code Screenshot",

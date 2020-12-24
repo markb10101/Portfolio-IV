@@ -1,10 +1,21 @@
 //* portfolio MB *// 
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-@import url('/normalize.css');
 
-//////////////////////////////////////////////////////////// 
-// procedural
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+
 .pageTop {
     display: block;
     position: absolute;
@@ -22,31 +33,19 @@
     }
 }
 
-//////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////////// 
 // page
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-    width: 0px;
-}
 
 body {
-
+    font-family: 'Noto Sans KR', sans-serif;
     overflow-x: hidden;
     max-width: 1800px;
-    background-color: rgba(86, 151, 215,1);
+    background-color: rgba(86, 151, 215, 1);
     background-image: linear-gradient(0deg,
-                    rgba(86, 151, 215, 1) 1%,
-                    rgba(86, 151, 215, 0.5) 5%,
-                    rgba(86, 151, 215, 0)99%),
-                      url("./images/winter_web.jpg");
+            rgba(86, 151, 215, 1) 1%,
+            rgba(86, 151, 215, 0.5) 5%,
+            rgba(86, 151, 215, 0)99%),
+        url("./images/winter_web.jpg");
     background-position-x: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -146,7 +145,7 @@ body {
         }
 
         .settingsContainer {
-            
+
             display: flex;
             justify-content: space-between;
 
@@ -315,6 +314,7 @@ body {
 
                 p {
 
+
                     font-weight: bold;
                 }
 
@@ -357,6 +357,15 @@ body {
 
                 p {
                     padding: 0.5rem 0;
+                    -webkit-animation: textFade 2s;
+                    /* Safari, Chrome and Opera > 12.1 */
+                    -moz-animation: textFade 2s;
+                    /* Firefox < 16 */
+                    -ms-animation: textFade 2s;
+                    /* Internet Explorer */
+                    -o-animation: textFade 2s;
+                    /* Opera < 12.1 */
+                    animation: textFade 2s;
 
                     a {
                         text-decoration: none;
@@ -369,8 +378,18 @@ body {
                     margin-bottom: 8rem;
 
                     .infoPanel {
+                        
+                        position: relative;
                         display: block;
                         height: 10rem;
+
+                        p {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                        }
+
+
                     }
 
                     .cardContainer {
@@ -604,24 +623,7 @@ body {
 
 @media only screen and (max-width: 600px) {
 
-    body {
-        .pageContainer {
-            .mainContainer#about {
-                margin-top: 12rem;
-            }
-
-            .mainContainer {
-                section {
-                    .portfolioContainer {
-                        .cardContainer {
-                            grid-template-columns: auto auto;
-                        }
-                    }
-                }
-            }
-        }
-
-
-
+    .cardContainer {
+        grid-template-columns: auto auto;
     }
 }

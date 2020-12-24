@@ -155,7 +155,8 @@ const animate = () => {
         item.style.left = `${position}px`;
         item.style.top = `${(balls.offsetY * 2810) + (balls.spread * index)}px`;
         item.style.backgroundImage = `radial-gradient(circle,
-                                    ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},transparent)`;
+                                    ${hexToRGB(portfolio.colorSelectorEl.value, balls.opacity + (sinVal * balls.fade))},
+                                    ${hexToRGB("#ffffff", 0)})`;
         item.style.width = `${balls.size / 100 * 6}rem`;
         item.style.height = `${balls.size / 100 * 6}rem`;
     })
