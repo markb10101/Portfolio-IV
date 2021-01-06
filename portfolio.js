@@ -33,7 +33,7 @@ h1El.innerHTML = h1SpanArr.join("");
 
 //////////////////////////////////////////////////////////////////////
 // update active navbar link when in associated section
-const navbarClassArr = ['.menu_home', '.menu_portfolio', '.menu_about', '.menu_contact'];
+const navbarClassArr = ['.menu_home', '.menu_projects', '.menu_skills', '.menu_about'];
 const navbarLinksArr = [];
 
 const handleMenuChoice = (e) => {
@@ -197,10 +197,24 @@ const setupProjectCards = () => {
     })
 }
 
+const setupSkillsIcons = () => {
+
+    const skillsContainerEl = document.querySelector('.skillsContainer');
+    let skillsHTML = "";
+    const skillsArr = ["html5","css3","sass","javascript","git","github","react","adobe"];
+    skillsArr.forEach((skill) => {
+        skillsHTML += `<object class="svg-object" data="./svgs/logo-${skill}.svg" type="image/svg+xml"></object>`;
+    }) 
+
+    skillsContainerEl.innerHTML= skillsHTML;
+    
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
     setupProjectCards();
+    setupSkillsIcons();
     setupAnimatingElements();
     setupAnimationOptions();
 

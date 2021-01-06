@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 * {
   margin: 0;
@@ -219,7 +218,7 @@ body .pageContainer {
   justify-content: space-evenly;
 }
 body .pageContainer .mainContainer {
-  padding: 18rem 2rem;
+  padding: 20rem 2rem;
   height: 96rem;
 }
 body .pageContainer .mainContainer header {
@@ -302,26 +301,31 @@ body .pageContainer .mainContainer section p a {
   text-decoration: none;
   color: #fff;
 }
-body .pageContainer .mainContainer section .portfolioContainer {
+body .pageContainer .mainContainer section .projectsContainer {
   margin-bottom: 8rem;
 }
-body .pageContainer .mainContainer section .portfolioContainer .infoPanel {
+body .pageContainer .mainContainer section .projectsContainer .infoPanel {
   position: relative;
   display: block;
   height: 10rem;
 }
-body .pageContainer .mainContainer section .portfolioContainer .infoPanel p {
+body .pageContainer .mainContainer section .projectsContainer .infoPanel p {
   position: absolute;
   bottom: 0;
   left: 0;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer {
   margin: 0 auto;
   display: grid;
   justify-content: space-around;
   grid-template-columns: auto auto auto;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card {
+@media only screen and (max-width: 600px) {
+  body .pageContainer .mainContainer section .projectsContainer .cardContainer {
+    grid-template-columns: auto auto;
+  }
+}
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card {
   z-index: 5;
   background-color: rgba(255, 255, 255, 0.125);
   border-radius: 5px;
@@ -331,7 +335,7 @@ body .pageContainer .mainContainer section .portfolioContainer .cardContainer .c
   padding-bottom: 1rem;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card:hover {
   margin: 1.9rem 0;
   animation: jiggle 2s infinite linear;
   transform: scale(1.1, 1.1);
@@ -352,148 +356,77 @@ body .pageContainer .mainContainer section .portfolioContainer .cardContainer .c
     transform: rotate(-1deg) scale(1.1, 1.1);
   }
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card h3 {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card h3 {
   padding: 0 0 0.5rem 0.5rem;
   font-size: 1rem;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card img {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card img {
   max-width: 100%;
   height: auto;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card p.info {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card p.info {
   display: none;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card:hover {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card:hover {
   cursor: pointer;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card .projectLinks {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card .projectLinks span {
   position: relative;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 0.25rem;
   text-align: center;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span a {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card .projectLinks span a {
   text-decoration: none;
   color: #000f;
 }
-body .pageContainer .mainContainer section .portfolioContainer .cardContainer .card .projectLinks span:hover {
+body .pageContainer .mainContainer section .projectsContainer .cardContainer .card .projectLinks span:hover {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
-body .pageContainer .mainContainer section .contactFormContainer {
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.25);
-}
-body .pageContainer .mainContainer section .contactFormContainer form {
-  margin-top: 1rem;
-  padding: 2rem 2rem 1rem 2rem;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div {
-  position: relative;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div label {
-  opacity: 0.3;
-  position: absolute;
-  top: 1.3rem;
-  left: 0.5rem;
-  color: #000;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text],
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email],
-body .pageContainer .mainContainer section .contactFormContainer form div select,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea {
-  padding: 0.5rem;
-  margin: 1rem 0;
-  width: 100%;
-  resize: vertical;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:focus, body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:valid,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:focus,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:valid,
-body .pageContainer .mainContainer section .contactFormContainer form div select:focus,
-body .pageContainer .mainContainer section .contactFormContainer form div select:valid,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:focus,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:valid {
-  border: 4px solid #0f0;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:focus + label, body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:valid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:focus + label,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:valid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div select:focus + label,
-body .pageContainer .mainContainer section .contactFormContainer form div select:valid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:focus + label,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:valid + label {
-  top: -0.5rem;
-  opacity: 0.75;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid,
-body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid {
-  border: 4px solid #f00;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid + label,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid + label {
-  top: -0.5rem;
-  opacity: 0.75;
-}
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=text]:not(:placeholder-shown):not(:focus):invalid + label:before,
-body .pageContainer .mainContainer section .contactFormContainer form div input[type=email]:not(:placeholder-shown):not(:focus):invalid + label:before,
-body .pageContainer .mainContainer section .contactFormContainer form div select:not(:placeholder-shown):not(:focus):invalid + label:before,
-body .pageContainer .mainContainer section .contactFormContainer form div textarea:not(:placeholder-shown):not(:focus):invalid + label:before {
-  content: "☒";
-}
-body .pageContainer .mainContainer section .contactFormContainer form button {
-  margin: 1rem auto;
-  display: block;
-  width: 8rem;
-  position: relative;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  padding: 0.25rem;
-  border: 2px solid black;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0);
-  transition: width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s;
-}
-body .pageContainer .mainContainer section .contactFormContainer form button:hover {
-  width: 12rem;
-  background-color: rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-}
 body .pageContainer .mainContainer#about,
-body .pageContainer .mainContainer#contact {
+body .pageContainer .mainContainer#skills {
   color: #fff;
 }
 body .pageContainer .mainContainer#about h2,
-body .pageContainer .mainContainer#contact h2 {
+body .pageContainer .mainContainer#skills h2 {
   color: #000;
 }
 body .pageContainer .mainContainer#about a,
-body .pageContainer .mainContainer#contact a {
+body .pageContainer .mainContainer#skills a {
   color: #000;
 }
-body .pageContainer .mainContainer#about {
+body .pageContainer .mainContainer#about .skillsContainer,
+body .pageContainer .mainContainer#skills .skillsContainer {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto;
+}
+@media only screen and (max-width: 600px) {
+  body .pageContainer .mainContainer#about .skillsContainer,
+body .pageContainer .mainContainer#skills .skillsContainer {
+    grid-template-columns: auto auto;
+  }
+}
+body .pageContainer .mainContainer#about .skillsContainer object,
+body .pageContainer .mainContainer#skills .skillsContainer object {
+  width: 5rem;
+  padding: 2rem 0;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5));
+}
+body .pageContainer .mainContainer#skills {
   margin-top: 8rem;
 }
-body .pageContainer .mainContainer#contact footer {
+body .pageContainer .mainContainer#about footer {
   width: 100%;
   text-align: center;
   height: 1.5rem;
   color: rgba(255, 255, 255, 0.25);
-  margin-top: 40px;
+  margin-top: 80px;
   bottom: 0px;
-}
-
-@media only screen and (max-width: 600px) {
-  .cardContainer {
-    grid-template-columns: auto auto;
-  }
 }

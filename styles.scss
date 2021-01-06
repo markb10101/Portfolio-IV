@@ -270,9 +270,8 @@ body {
         justify-content: space-evenly;
 
         .mainContainer {
-            padding: 18rem 2rem;
+            padding: 20rem 2rem;
             height: 96rem;
-
 
             header {
                 padding-top: 4rem;
@@ -281,17 +280,14 @@ body {
                 user-select: none;
 
                 h1 {
-
                     z-index: 5;
                     position: relative;
-
                     line-height: 3.5rem;
                     font-size: 3rem;
                     color: #fff;
                     user-select: none;
 
                     .h1Char {
-
                         position: relative;
                         margin: 0;
                         bottom: 0;
@@ -309,12 +305,9 @@ body {
                     z-index: 5;
                     padding: 0.25rem 0 1rem 0;
                     font-size: 1.375rem;
-
                 }
 
                 p {
-
-
                     font-weight: bold;
                 }
 
@@ -373,12 +366,12 @@ body {
                     }
                 }
 
-                .portfolioContainer {
+                .projectsContainer {
 
                     margin-bottom: 8rem;
 
                     .infoPanel {
-                        
+
                         position: relative;
                         display: block;
                         height: 10rem;
@@ -388,8 +381,6 @@ body {
                             bottom: 0;
                             left: 0;
                         }
-
-
                     }
 
                     .cardContainer {
@@ -397,6 +388,10 @@ body {
                         display: grid;
                         justify-content: space-around;
                         grid-template-columns: auto auto auto;
+
+                        @media only screen and (max-width: 600px) {
+                            grid-template-columns: auto auto;
+                        }
 
                         .card {
                             z-index: 5;
@@ -475,114 +470,16 @@ body {
                                         // left: -0.125rem;
                                         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
                                     }
-
                                 }
                             }
                         }
-
-                    }
-
-                }
-
-                .contactFormContainer {
-
-                    border-radius: 0.5rem;
-                    background-color: rgba(255, 255, 255, 0.25);
-
-                    form {
-                        margin-top: 1rem;
-                        padding: 2rem 2rem 1rem 2rem;
-
-                        div {
-                            position: relative;
-
-                            label {
-                                opacity: 0.3;
-                                position: absolute;
-                                top: 1.3rem;
-                                left: 0.5rem;
-                                color: #000;
-                            }
-
-                            input[type=text],
-                            input[type=email],
-                            select,
-                            textarea {
-                                padding: 0.5rem;
-                                margin: 1rem 0;
-                                width: 100%;
-                                resize: vertical;
-
-                                &:focus,
-                                &:valid {
-                                    border: 4px solid #0f0;
-
-                                    +label {
-                                        top: -0.5rem;
-                                        opacity: 0.75;
-
-                                    }
-
-
-                                }
-
-
-
-
-                                &:not(:placeholder-shown):not(:focus):invalid {
-                                    border: 4px solid #f00;
-
-                                    +label {
-                                        top: -0.5rem;
-                                        opacity: 0.75;
-
-                                        &:before {
-                                            content: "\2612 ";
-                                        }
-                                    }
-                                }
-
-
-                            }
-
-
-                        }
-
-                        button {
-                            margin: 1rem auto;
-                            display: block;
-                            width: 8rem;
-                            position: relative;
-                            color: #fff;
-                            margin-bottom: 1.5rem;
-                            padding: 0.25rem;
-                            border: 2px solid black;
-                            border-radius: 5px;
-                            background-color: rgba(0, 0, 0, 0);
-                            transition: width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s;
-
-                            &:hover {
-                                width: 12rem;
-                                background-color: rgba(0, 0, 0, 0.25);
-                                cursor: pointer;
-                            }
-                        }
-
                     }
                 }
-
-
             }
-
-
-
         }
 
-
-
-
         .mainContainer#about,
-        .mainContainer#contact {
+        .mainContainer#skills {
             color: #fff;
 
             h2 {
@@ -592,13 +489,34 @@ body {
             a {
                 color: #000;
             }
+
+            .skillsContainer {
+                display: grid;
+                justify-content: space-around;
+                grid-template-columns: auto auto auto;
+
+                @media only screen and (max-width: 600px) {
+                    grid-template-columns: auto auto;
+                }
+
+                object {
+                    
+                    width: 5rem;
+                    padding: 2rem 0;
+                    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+                    
+                }
+
+            }
+
+
         }
 
-        .mainContainer#about {
+        .mainContainer#skills {
             margin-top: 8rem;
         }
 
-        .mainContainer#contact {
+        .mainContainer#about {
 
             footer {
                 width: 100%;
@@ -607,23 +525,9 @@ body {
                 height: 1.5rem;
                 color: rgba(255, 255, 255, 0.25);
 
-                margin-top: 40px;
+                margin-top: 80px;
                 bottom: 0px;
-
             }
-
         }
-
-
-    }
-}
-
-//////////////////////////////////////////////////////////// 
-// mobile adjustments
-
-@media only screen and (max-width: 600px) {
-
-    .cardContainer {
-        grid-template-columns: auto auto;
     }
 }
