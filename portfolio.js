@@ -201,9 +201,9 @@ const setupSkillsIcons = () => {
 
     const skillsContainerEl = document.querySelector('.skillsContainer');
     let skillsHTML = "";
-    const skillsArr = ["html5","css3","sass","javascript","git","github","react","adobe"];
+    const skillsArr = ["html5","css3","scss","javascript","git","github","react","adobe"];
     skillsArr.forEach((skill) => {
-        skillsHTML += `<object class="svg-object" data="./svgs/logo-${skill}.svg" type="image/svg+xml"></object>`;
+        skillsHTML += `<div><object class="svg-object" data="./svgs/logo-${skill}.svg" type="image/svg+xml"></object><span>${skill.toUpperCase()}</span></div>`;
     }) 
 
     skillsContainerEl.innerHTML= skillsHTML;
