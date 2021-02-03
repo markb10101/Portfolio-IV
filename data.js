@@ -16,6 +16,14 @@ export const projectsArr = [
         codeSrc: "https://github.com/markb10101/frontendmentor-mb-todo"
     },
     {
+        title: "REST Countries API",
+        description: "A React app which pulls country data from the REST countries API and displays it in a design set by Frontend Mentor.",
+        alt: "Todo App Screenshot",
+        imgSrc: "./images/screen-country.jpg",
+        liveSrc: "https://markb10101.github.io/frontendmentor-mb-countries/",
+        codeSrc: "https://github.com/markb10101/frontendmentor-mb-countries"
+    },
+    {
         title: "Morse Code",
         description: "A Morse Code <-> English Translator App coded with a TDD approach. Tests were written first, using Jest",
         alt: "Morse Code Screenshot",
